@@ -1,0 +1,29 @@
+{
+  "name": "ameba-util",
+  "version": "0.9.0",
+  "description": "ameba util code",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- --recursive && node_modules/.bin/eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koiketakayuki/ameba-util.git"
+  },
+  "author": "koiketakayuki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/koiketakayuki/ameba-util/issues"
+  },
+  "homepage": "https://github.com/koiketakayuki/ameba-util#readme",
+  "devDependencies": {
+    "codeclimate-test-reporter": "^0.4.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.1.3",
+    "eslint-plugin-import": "^2.2.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "should": "^11.2.1",
+    "ameba-core": "^0.9.1"
+  }
+}
