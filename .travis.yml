@@ -1,21 +1,21 @@
 language: node_js
 node_js:
-  - "6"
-  - "stable"
+- '6'
+- stable
 after_success:
-  - npm install -g codeclimate-test-reporter
-  - codeclimate-test-reporter < coverage/lcov.info
+- npm install -g codeclimate-test-reporter
+- codeclimate-test-reporter < coverage/lcov.info
 sudo: false
 cache:
   directories:
-    - node_modules
+  - node_modules
 addons:
   code_climate:
     repo_token: c1af35bbf693a87ee32326641bb81342287bd80a7462a4ff3a958403f2451f1f
 deploy:
   email: koike.takayuki0907@gmail.com
   provider: npm
-  api_key: 
-    secure: qFs8fXU5nkFrpHhgV7T9fTUNjDM71zZm3WCbta2mLun5X6/mzjo7Sy383IjZyjHcxeFHtjF2SzNCwD5vj6Z2tIqpVVETLZkMnKEj56HwPFY/ByUxvE7Ge++9Pv8xhQMfMAXFuY+2kvaSDYfOS6v2lATUr4TU6O5jWuwhpnh3sQCPao5qhZEl8JZbZPJ3EFmV2UdDkJOnArRmFDlK400UygjqK0n0O1dGEYj44vb+aHasILdcHpyLqtziE15OI0EjqDKH7hUWZ5c5zwuZeTOr1UkfgCReCR2HpIlRK9R6kNjp/RSzAkpJuWNfAF0KUVfftFONVmy1wGs5M1mlwkdSQtWHzEAEPGD/eLX/IxlJhSFQwRoXyfRBlafCWeRtu8AGCJb7rjoOOCNgDzavxALSwWz9ZTk0sdbl0UCdOquANJWB5HMbcVzBjkA120z+uiGiYjxnUIL1wwKGhqQsog8KZtlssoz2TOijHox0pnPF4zjR5qyHaxsfsdlDSWr9fzFE0AChmISbfrVxApv+u2u9VEQ99BC9Y4QWO0PNcLYArEnE9R3rYKv/plDaorlSqmZUkGQmG+3JXeJU8RFG/2a2QmCbbj06sv1ygmSR9dqIwdvLhs+R65WcKHO+Bqc3ZaPXulWlCZ8qy49gMKGpr/IYlpKyM3OJ4u0V5edrdHnk5Rc=
+  api_key:
+    secure: n1Hpy9tNHLQp4ACIVlhO2sTC8pL8vwJkfZ3wVcZbXVBxHf4l7ctFmKGGgymTCU0LfKFKLB1xX3mZXK3UhzbkJFTZZtjJ0U5XDaZEfjfS7Mi6palpRLpRz3gGP+ixKhUzjzM2/5zpVyyYDS1dPyUKuXcRJg02k0zHQI6V9vXuNm963/tWvkpp95v+J/uV/6c4jIkDeMXMzyvGBvaxUBuQjr1iLSwOJGzVMFmJlyOqeuwpYQzJ9MMcf/MO08D/fg5mX5mo8g4hhNFvReDG15I6Bd8ZPbgWHvRZs0R1TcPeuU2LYSUxyLc2CUe8QgfFhCawK898J/RSuwXmM8806p6uR8Lh3kjwqHVLKL9lCfPuJV6vK86k1Fwpo3+IGpDDqV7bOnV6mey2PPmQxRlpLe9ihhKGKGcCUyYY17eUCsEojMj0t664O7AXz8ojCnlHC/xwBMROJLjHjGihHtDQM8Klfn8+KbLdV2JmHcMM0fwXX8OPiVlT9NZdkqOT9i8eUO965I08GOHJWy7ceBchNh2tF+YJHczJilhyH4EDvgdTRlEa4F1xGx/ZAp+QqHxuY+JKuTBFS0aBgGOiz5H+VkWzXSf67Nu8MZ1tIuJvEtR4CDYqJ8na7wMCNx9p7KkHv+BTfQyqmHbhFC0NZqtHQnX3Rt3h5EM6tE9SeRinOBeufho=
   on:
     tags: true
