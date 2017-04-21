@@ -1,5 +1,5 @@
-function isNumber(obj) {
-  return (typeof obj === 'number');
+function isNumber(item) {
+  return (typeof item === 'number');
 }
 
 module.exports = isNumber;

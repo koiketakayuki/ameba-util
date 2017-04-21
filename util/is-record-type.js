@@ -1,15 +1,12 @@
 const RecordType = require('ameba-core').Types.RecordType;
-const getHierarchyFields = require('./get-hierarchy-fields');
 const isObject = require('./is-object');
 
-function isRecordType(obj) {
-  if (!isObject(obj)) {
+function isRecordType(item) {
+  if (!isObject(item)) {
     return false;
   }
 
-  const propertyNames = Object.getOwnPropertyNames(obj);
-
-  return getHierarchyFields(RecordType).every(f => propertyNames.includes(f.id));
+  return RecordType.fields.every(f => f.id in item);
 }
 
 module.exports = isRecordType;

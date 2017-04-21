@@ -1,5 +1,5 @@
-function isBoolean(obj) {
-  return (typeof obj === 'boolean');
+function isBoolean(item) {
+  return (typeof item === 'boolean');
 }
 
 module.exports = isBoolean;

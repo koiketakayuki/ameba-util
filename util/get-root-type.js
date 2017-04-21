@@ -1,20 +1,11 @@
 const Record = require('ameba-core').Types.Record;
-const isRecordType = require('./is-record-type');
 
-function getRootType(type) {
-  if (!isRecordType(type)) {
-    throw new Error('record type is expected, but not given');
+function getRootType(recordType) {
+  if (recordType.baseType.id === Record) {
+    return recordType;
   }
 
-  if (type === Record) {
-    return Record;
-  }
-
-  if (type.baseType === Record) {
-    return type;
-  }
-
-  return getRootType(type.baseType);
+  return getRootType(recordType.baseType);
 }
 
 module.exports = getRootType;

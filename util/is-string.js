@@ -1,5 +1,5 @@
-function isString(obj) {
-  return (typeof obj === 'string');
+function isString(item) {
+  return (typeof item === 'string');
 }
 
 module.exports = isString;

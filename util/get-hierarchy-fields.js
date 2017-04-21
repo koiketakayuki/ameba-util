@@ -1,7 +1,7 @@
 const Record = require('ameba-core').Types.Record;
 
 function getHierarchyFields(recordType) {
-  if (recordType === Record) {
+  if (recordType.id === Record.id) {
     return Record.fields;
   }
 
