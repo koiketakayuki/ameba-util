@@ -1,12 +1,22 @@
-const CoreTypes = require('ameba-core').Types;
+const Types = require('ameba-core').Types;
 const isBoolean = require('./is-boolean');
 const isNumber = require('./is-number');
 const isString = require('./is-string');
+const isFunction = require('./is-function');
 
-const Record = CoreTypes.Record;
-const BooleanType = CoreTypes.BooleanType;
-const NumberType = CoreTypes.NumberType;
-const TextType = CoreTypes.TextType;
+const Record = Types.Record;
+const TextType = Types.TextType;
+const BooleanType = Types.BooleanType;
+const LongTextType = Types.LongTextType;
+const RichTextType = Types.RichTextType;
+const NumberType = Types.NumberType;
+const IntType = Types.IntType;
+const DateType = Types.DateType;
+const TimeType = Types.TimeType;
+const DateTimeType = Types.DateTimeType;
+const FunctionType = Types.FunctionType;
+const BinaryType = Types.BinaryType;
+const EnumerationType = Types.EnumerationType;
 
 function isInstanceOf(record, recordType) {
   if (recordType.id === BooleanType.id) {
@@ -17,8 +27,26 @@ function isInstanceOf(record, recordType) {
     return isNumber(record);
   }
 
-  if (recordType.id === TextType.id) {
+  if (recordType.id === IntType.id) {
+    return Number.isInteger(record);
+  }
+
+  if (recordType.id === TextType.id || recordType.id === LongTextType.id ||
+    recordType.id === RichTextType.id || recordType.id === EnumerationType.id) {
     return isString(record);
+  }
+
+  if (recordType.id === DateType.id || recordType.id === TimeType.id ||
+    recordType.id === DateTimeType.id) {
+    return record instanceof Date;
+  }
+
+  if (recordType.id === FunctionType.id) {
+    return isFunction(record);
+  }
+
+  if (recordType.id === BinaryType.id) {
+    return record instanceof Buffer;
   }
 
   let type = record.type;
