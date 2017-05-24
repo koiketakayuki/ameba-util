@@ -1,15 +1,13 @@
-const isRecordType = require('./is-record-type');
+const Core = require('ameba-core');
+
 const getHierarchyFields = require('./get-hierarchy-fields');
+const isInstanceOf = require('./is-instance-of');
 
 function createRecord(type, args) {
-  if (!isRecordType(type)) {
-    throw new Error('record type is expected, but not given');
-  }
+  const result = {};
+  const fields = getHierarchyFields(type).filter(f => f.id !== Core.Fields.type.id);
 
-  const result = { type };
-  const fields = getHierarchyFields(type);
-
-  fields.filter(f => f.id !== 'type').forEach((f) => {
+  fields.forEach((f) => {
     const fieldId = f.id;
     let fieldValue = args[fieldId];
 
@@ -18,8 +16,24 @@ function createRecord(type, args) {
         throw new Error(`field "${fieldId}" is required, but not given`);
       }
 
+      // set defaultValue if exists
       if (f.defaultValue != null) {
         fieldValue = f.defaultValue;
+      }
+    }
+
+    // type check
+    if (fieldValue !== null && !isInstanceOf(fieldValue, f.fieldType)) {
+      const actualType = typeof fieldValue;
+      throw new Error(`field type of "${f.id}" is ${f.fieldType.id}, but actual js type is ${actualType}`);
+    }
+
+    // validate if validator exists
+    if (f.validator) {
+      const errorMessage = f.validator(fieldValue);
+
+      if (errorMessage) {
+        throw new Error(errorMessage);
       }
     }
 
