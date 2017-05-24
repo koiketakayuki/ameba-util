@@ -1,5 +1,5 @@
 const should = require('should');
-const isString = require('../util/is-string');
+const isString = require('../index').isString;
 
 describe('isString', function () {
   it('should return false when boolean given', function () {

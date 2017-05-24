@@ -1,5 +1,5 @@
 const should = require('should');
-const getRootType = require('../util/get-root-type');
+const getRootType = require('../index').getRootType;
 const CoreTypes = require('ameba-core').Types;
 
 describe('getRootType', function () {

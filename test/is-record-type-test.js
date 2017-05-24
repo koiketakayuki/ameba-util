@@ -1,5 +1,5 @@
 const should = require('should');
-const isRecordType = require('../util/is-record-type');
+const isRecordType = require('../index').isRecordType;
 const CoreTypes = require('ameba-core').Types;
 const CoreFields = require('ameba-core').Fields;
 

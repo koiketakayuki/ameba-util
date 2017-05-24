@@ -1,5 +1,5 @@
 const should = require('should');
-const isObject = require('../util/is-object');
+const isObject = require('../index').isObject;
 
 describe('isObject', function () {
   it('should return false when boolean given', function () {

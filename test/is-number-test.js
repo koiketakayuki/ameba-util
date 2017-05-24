@@ -1,5 +1,5 @@
 const should = require('should');
-const isNumber = require('../util/is-number');
+const isNumber = require('../index').isNumber;
 
 describe('isNumber', function () {
   it('should return false when boolean given', function () {

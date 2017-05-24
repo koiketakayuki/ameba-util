@@ -1,5 +1,5 @@
 const should = require('should');
-const isInstanceOf = require('../util/is-instance-of');
+const isInstanceOf = require('../index').isInstanceOf;
 const CoreTypes = require('ameba-core').Types;
 const CoreFields = require('ameba-core').Fields;
 
