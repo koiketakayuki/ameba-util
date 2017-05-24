@@ -1,6 +1,7 @@
 const isBoolean = require('./source/is-boolean');
 const isNumber = require('./source/is-number');
 const isString = require('./source/is-string');
+const isFunction = require('./source/is-function');
 const isObject = require('./source/is-object');
 const isRecord = require('./source/is-record');
 const isRecordType = require('./source/is-record-type');
@@ -13,6 +14,7 @@ module.exports = {
   isBoolean,
   isNumber,
   isString,
+  isFunction,
   isObject,
   isRecord,
   isRecordType,
