@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/koiketakayuki/ameba-util#readme",
   "dependencies": {
-    "ameba-core": "^0.9.3"
+    "ameba-core": "^0.9.10"
   },
   "devDependencies": {
     "codeclimate-test-reporter": "^0.4.1",
