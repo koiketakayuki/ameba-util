@@ -1,6 +1,6 @@
 {
   "name": "ameba-util",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "ameba util code",
   "main": "index.js",
   "scripts": {
