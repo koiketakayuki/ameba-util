@@ -29,4 +29,8 @@ describe('isNumber', function () {
   it('should return false when undefined given', function () {
     isNumber(undefined).should.be.false();
   });
+
+  it('should return false when function given', function () {
+    isNumber(() => 1).should.be.false();
+  });
 });

@@ -29,4 +29,8 @@ describe('isObject', function () {
   it('should return false when undefined given', function () {
     isObject(undefined).should.be.false();
   });
+
+  it('should return false when function given', function () {
+    isObject(() => 1).should.be.false();
+  });
 });

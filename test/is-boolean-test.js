@@ -33,4 +33,8 @@ describe('isBoolean', function () {
   it('should return false when undefined given', function () {
     isBoolean(undefined).should.be.false();
   });
+
+  it('should return false when function given', function () {
+    isBoolean(() => 1).should.be.false();
+  });
 });
